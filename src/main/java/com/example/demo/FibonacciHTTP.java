@@ -10,9 +10,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class FibonacciHTTP {
 
 	@RequestMapping("/fibonacci")
-	public @ResponseBody String fibonaccihttp (@RequestParam(value="numero", defaultValue="10") int numero) {
+	public @ResponseBody Fibonacci fibonaccihttp (@RequestParam(value="numero", defaultValue="7") int numero) {
 		
-		return "HOLA"+numero;
+		int n1 = numero -1;
+		Fibonacci f = new Fibonacci();
+		f.mostrarSerie(numero,n1);
+		
+		return f;
 		
 	}
 }
